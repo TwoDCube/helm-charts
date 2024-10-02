@@ -45,7 +45,8 @@ securityContext:
   capabilities:
     drop:
     - ALL
-  readOnlyRootFilesystem: true
+  # TODO: fix this
+  # readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 1000
 
