@@ -49,10 +49,10 @@ spec:
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
+          {{- end }}
           envFrom:
             - secretRef:
                 name: {{ include "strapi-demo.fullname" . }}
-          {{- end }}
       {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}
