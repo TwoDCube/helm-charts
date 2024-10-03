@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ include "strapi-demo.fullname" . }}-database"
+spec:
+{{- with .Values.persistentVolumeClaim.database }}
+  {{- toYaml . | nindent 2 }}
+{{- end }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ include "strapi-demo.fullname" . }}-uploads"
+spec:
+{{- with .Values.persistentVolumeClaim.uploads }}
+  {{- toYaml . | nindent 2 }}
+{{- end }}

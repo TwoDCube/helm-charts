@@ -46,17 +46,25 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+            - name: tmp
+              mountPath: "/tmp"
+            - name: database
+              mountPath: "/opt/app/.tmp"
+            - name: uploads
+              mountPath: "/opt/app/public/uploads"
           envFrom:
             - secretRef:
                 name: {{ include "strapi-demo.fullname" . }}
-      {{- with .Values.volumes }}
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        - name: tmp
+          emptyDir: {}
+        - name: database
+          persistentVolumeClaim:
+            claimName: "{{ include "strapi-demo.fullname" . }}-database"
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: "{{ include "strapi-demo.fullname" . }}-uploads"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
