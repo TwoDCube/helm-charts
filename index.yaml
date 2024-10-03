@@ -3,6 +3,16 @@ entries:
   strapi-demo:
   - apiVersion: v2
     appVersion: v6
+    created: "2024-10-03T10:12:52.402758809Z"
+    description: A Helm chart for Kubernetes
+    digest: 68dd5937652e8ae405c5cfd3c093bd0e393536c010f4af71a6c2b1f0f0f5b949
+    name: strapi-demo
+    type: application
+    urls:
+    - https://github.com/TwoDCube/helm-charts/releases/download/strapi-demo-0.0.1-12/strapi-demo-0.0.1-12.tgz
+    version: 0.0.1-12
+  - apiVersion: v2
+    appVersion: v6
     created: "2024-10-03T10:09:58.410784621Z"
     description: A Helm chart for Kubernetes
     digest: f25aab9eb61b6e8a2db93fd497299c87082e7e7a991de8e72eefe34ae218e707
@@ -111,4 +121,4 @@ entries:
     urls:
     - https://github.com/TwoDCube/helm-charts/releases/download/strapi-demo-0.0.1-0/strapi-demo-0.0.1-0.tgz
     version: 0.0.1-0
-generated: "2024-10-03T10:09:58.410845776Z"
+generated: "2024-10-03T10:12:52.402831856Z"
